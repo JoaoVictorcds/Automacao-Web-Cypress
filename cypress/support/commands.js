@@ -1,0 +1,5 @@
+import './commands'
+import './buscar-commands'
+import './cadastro-commands'
+import './checkout-commands'
+import './login-commands'
