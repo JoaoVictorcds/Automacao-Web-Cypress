@@ -6,7 +6,8 @@ telas.forEach((tela) => {
         describe("cadastro "+ tela,() => {
          beforeEach(() =>{
             cy.viewport(...tela)
-            cy.visit("https://automationpratice.com.br/register")
+            cy.visit("https://automationpratice.com.br")
+            cy.get('.right_list_fix').find('.fa-lock').click()
     })
     it("cadastro com sucesso", ()=>{
         
