@@ -1,0 +1,39 @@
+name: Cypress Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    workflow_dispatch:
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [1, 2, 3]
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar Cypress com paralelização + gravação no Cloud
+        uses: cypress-io/github-action@v6
+        with:
+          record: true                 # grava no Cypress Cloud
+          parallel: true               # ativa paralelização
+          group: "Cypress Parallel CI" # aparece no Cloud
+          browser: chrome
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}

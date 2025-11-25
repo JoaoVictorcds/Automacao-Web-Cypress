@@ -8,7 +8,7 @@
 describe("comandos basicos automacao web cy",() => {
         it("deve visitar uma URL",() => {
             // encontra a url que ira ser interagida
-            cy.visit('www.google.com.br');
+            cy.visit('www.automationpratice.com.br');
         });
 
         it("formas de encontrar um campo especifico",() => {
@@ -20,9 +20,9 @@ describe("comandos basicos automacao web cy",() => {
             // o mais diferente é o CONTAIN ja que ele procura por textos, entao, pode ser perigoso, pois pode ter mais de um texto igual na tela,
             // sendo assim, necessario diminuir o escopo tambem com get igual faz com find.
 
-            cy.get('#user'); //caso ele tenha um ID proprio ja serve como rota unica
-            cy.get('.mc-form').find('.form-control');
-            cy.get('.mc-form').contains('SEND MAIL');
+            //cy.get('#user'); //caso ele tenha um ID proprio ja serve como rota unica
+            //cy.get('.mc-form').find('.form-control');
+            //cy.get('.mc-form').contains('SEND MAIL');
         });
 
         it("preencher um campo com texto",() => {
@@ -35,8 +35,6 @@ describe("comandos basicos automacao web cy",() => {
             //seleciona o elemento que vai ser clicado atraves do id ou classe, e usa .click()
             cy.visit('www.automationpratice.com.br/login');
             cy.get('#btnLogin').click();
-            cy.get('#btnLogin').dbclick(); //double click
-            cy.get('#btnLogin').click(); //rightclick()
         });
 
         it("selecionar um Dropdown",() => {
