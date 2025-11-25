@@ -1,4 +1,4 @@
-#  Automao Web com Cypress Automation Practice
+#  Automacao Web com Cypress Automation Practice
 
 ![Cypress](https://img.shields.io/badge/Cypress-Testing-brightgreen)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
