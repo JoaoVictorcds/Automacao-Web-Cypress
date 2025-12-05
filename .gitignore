@@ -2,3 +2,4 @@ node_modules
 cypress/fixtures/example.json
 package-lock.json
 screenshots
+comandos-basicos.cy.js
